@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E4E72"/>
+      <stop offset="1" stop-color="#072238"/>
+    </linearGradient>
+    <clipPath id="globe"><circle cx="512" cy="540" r="300"/></clipPath>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
+  <!-- küre -->
+  <circle cx="512" cy="540" r="300" fill="#0E7C86"/>
+  <g clip-path="url(#globe)" fill="none" stroke="#7FE0D8" stroke-opacity="0.55" stroke-width="14">
+    <ellipse cx="512" cy="540" rx="120" ry="300"/>
+    <ellipse cx="512" cy="540" rx="230" ry="300"/>
+    <line x1="512" y1="240" x2="512" y2="840"/>
+    <path d="M212 440 Q512 390 812 440"/>
+    <path d="M212 640 Q512 690 812 640"/>
+    <line x1="212" y1="540" x2="812" y2="540"/>
+  </g>
+  <circle cx="512" cy="540" r="300" fill="none" stroke="#BDF2EC" stroke-width="16"/>
+  <!-- yolculuk yayı -->
+  <path d="M250 700 C 380 420, 640 360, 770 300" fill="none" stroke="#F2994A" stroke-width="30"
+        stroke-linecap="round" stroke-dasharray="1 58"/>
+  <circle cx="250" cy="700" r="30" fill="#F2994A"/>
+  <!-- konum iğnesi -->
+  <g transform="translate(770 300)">
+    <path d="M0 120 C -40 60 -92 18 -92 -40 A 92 92 0 1 1 92 -40 C 92 18 40 60 0 120 Z" fill="#E85D4A"/>
+    <circle cx="0" cy="-40" r="36" fill="#FFFFFF"/>
+  </g>
+</svg>

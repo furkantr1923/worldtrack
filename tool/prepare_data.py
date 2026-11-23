@@ -26,8 +26,12 @@ import urllib.request
 import zipfile
 from collections import defaultdict
 
-NE_URL = ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/"
-          "geojson/ne_50m_admin_0_countries.geojson")
+NE_BASE = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/"
+NE_URL = NE_BASE + "ne_50m_admin_0_countries.geojson"
+# Şehirleri KKTC / Somaliland'e atarken hassas (1:10m) sınırlar kullanılır.
+NE_DETAIL_URL = NE_BASE + "ne_10m_admin_0_countries.geojson"
+DETAIL_NAMES = {"N. Cyprus": "XC", "Cyprus": "CY", "Somaliland": "XS", "Somalia": "SO",
+                "Cyprus U.N. Buffer Zone": "CY"}
 GN = "https://download.geonames.org/export/dump/"
 
 # Natural Earth'te ISO kodu olmayan (-99) varlıklar için uygulama içi kodlar.
@@ -38,7 +42,9 @@ SPECIAL_CODES = {
 # Özel varlıkların başkentleri (GeoNames geonameid). Lefkoşa bölünmüş bir şehirdir;
 # GeoNames kaydı Kıbrıs Cumhuriyeti'nde kalır, KKTC'nin başkenti olarak da gösterilir.
 SPECIAL_CAPITALS = {"XC": 146268, "XS": 57289}
-SKIP_NAMES = {"Siachen Glacier"}             # Şehri olmayan, tartışmalı buzul
+SKIP_NAMES = {"Siachen Glacier"}
+# GeoNames'te tarihî olarak duran, artık var olmayan ülkeler.
+DISSOLVED = {"AN", "CS"}             # Şehri olmayan, tartışmalı buzul
 MERGE_INTO = {"Indian Ocean Ter.": "AU", "Ashmore and Cartier Is.": "AU"}
 
 REGION_TR = {
@@ -108,35 +114,72 @@ def ring_to_ints(ring):
     return out if len(out) >= 6 else None
 
 
-def point_in_ring(x, y, ring):
+def point_in_shape(x, y, polys, scale=SCALE):
+    for poly in polys:
+        if _pir(x, y, poly[0], scale) and not any(_pir(x, y, h, scale) for h in poly[1:]):
+            return True
+    return False
+
+
+def _pir(x, y, ring, scale):
     inside = False
     n = len(ring) // 2
     j = n - 1
     for i in range(n):
-        xi, yi = ring[2 * i] / SCALE, ring[2 * i + 1] / SCALE
-        xj, yj = ring[2 * j] / SCALE, ring[2 * j + 1] / SCALE
+        xi, yi = ring[2 * i] / scale, ring[2 * i + 1] / scale
+        xj, yj = ring[2 * j] / scale, ring[2 * j + 1] / scale
         if (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / (yj - yi) + xi:
             inside = not inside
         j = i
     return inside
 
 
-def nearest_vertex_dist(x, y, polys):
+DETAIL_SCALE = 100000
+
+
+def load_detail_shapes(path, cache):
+    raw = open(path, "rb").read() if path else fetch(NE_DETAIL_URL, cache)
+    out = defaultdict(list)
+    for f in json.loads(raw)["features"]:
+        code = DETAIL_NAMES.get(f["properties"]["NAME"])
+        if not code:
+            continue
+        g = f["geometry"]
+        polys = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
+        for poly in polys:
+            out[code].append([[round(v * DETAIL_SCALE) for pt in r for v in pt] for r in poly])
+    return out
+
+
+def nearest_dist(x, y, polys, scale):
     best = float("inf")
     for poly in polys:
         r = poly[0]
         for i in range(0, len(r), 2):
-            d = (r[i] / SCALE - x) ** 2 + (r[i + 1] / SCALE - y) ** 2
-            if d < best:
-                best = d
+            d = (r[i] / scale - x) ** 2 + (r[i + 1] / scale - y) ** 2
+            best = min(best, d)
     return best
 
 
-def point_in_shape(x, y, polys):
-    for poly in polys:
-        if point_in_ring(x, y, poly[0]) and not any(point_in_ring(x, y, h) for h in poly[1:]):
-            return True
-    return False
+def assign_special(cities, detail):
+    """KKTC ve Somaliland sınırları içindeki şehirleri o varlığa bağlar.
+
+    Başkent (PPLC) kayıtları ana ülkede bırakılır (Lefkoşa bölünmüş bir şehirdir).
+    Kıyıdaki şehirler poligon dışında kalabilir; o durumda en yakın sınır seçilir.
+    """
+    for c in cities:
+        for special, parent in (("XC", "CY"), ("XS", "SO")):
+            if c["cc"] not in (parent, special) or c["code"] == "PPLC":
+                continue
+            x, y = c["lon"], c["lat"]
+            if point_in_shape(x, y, detail[special], DETAIL_SCALE):
+                c["cc"] = special
+            elif point_in_shape(x, y, detail[parent], DETAIL_SCALE):
+                c["cc"] = parent
+            else:
+                near_s = nearest_dist(x, y, detail[special], DETAIL_SCALE)
+                near_p = nearest_dist(x, y, detail[parent], DETAIL_SCALE)
+                c["cc"] = special if near_s < near_p else parent
 
 
 def load_ne(path: str | None, cache: str):
@@ -200,7 +243,9 @@ def load_geonames(cache: str):
     with zip_member(fetch(GN + "cities15000.zip", cache), "cities15000.txt") as f:
         for line in f:
             c = line.rstrip("\n").split("\t")
-            if c[6] != "P":
+            # Yalnızca gerçek yerleşimler: semt/bölüm (PPLX), tarihî (PPLH),
+            # terk edilmiş (PPLQ) ve yıkılmış (PPLW) kayıtlar alınmaz.
+            if c[6] != "P" or c[7] in ("PPLX", "PPLH", "PPLQ", "PPLW"):
                 continue
             cities.append({
                 "id": int(c[0]), "name": c[1], "ascii": c[2],
@@ -236,6 +281,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="assets/data")
     ap.add_argument("--ne", default=None)
+    ap.add_argument("--ne-detail", default=None)
     ap.add_argument("--cache", default=".cache")
     args = ap.parse_args()
 
@@ -248,20 +294,9 @@ def main():
     tr = load_turkish_names(args.cache, wanted)
 
     # Kuzey Kıbrıs ve Somaliland poligonları içindeki şehirleri o varlığa bağla.
-    # Kıyıdaki şehirler 1:50m ölçekte poligonun dışında kalabilir; o durumda en yakın
-    # sınıra göre karar verilir. Başkent (PPLC) kayıtları ana ülkede bırakılır.
-    for c in cities:
-        for special, parent in (("XC", "CY"), ("XS", "SO")):
-            if c["cc"] != parent or c["code"] == "PPLC" or special not in shapes:
-                continue
-            x, y = c["lon"], c["lat"]
-            if point_in_shape(x, y, shapes[special]):
-                c["cc"] = special
-            elif not point_in_shape(x, y, shapes[parent]) and \
-                    nearest_vertex_dist(x, y, shapes[special]) < nearest_vertex_dist(x, y, shapes[parent]):
-                c["cc"] = special
+    assign_special(cities, load_detail_shapes(args.ne_detail, args.cache))
 
-    codes = sorted(set(ne) | set(info))
+    codes = sorted((set(ne) | set(info)) - DISSOLVED)
     capitals = {}
     by_id = {c["id"]: c for c in cities}
     for c in cities:
@@ -298,6 +333,9 @@ def main():
             "currency": g.get("currency", ""),
             "currencyName": g.get("currencyName", ""),
             "wikidata": n.get("wikidata", ""),
+            # Aramada kullanılacak diğer adlar (ör. "Çekya", "Czechia").
+            "aliases": sorted({a for a in ((tr.get(gid) if gid else None), g.get("name"))
+                               if a and a not in (name_tr, n.get("nameEn"))}),
             "hasShape": code in shapes,
             "labelLon": n.get("labelLon"),
             "labelLat": n.get("labelLat"),
