@@ -1,0 +1,34 @@
+00:00 +0: loading /home/runner/work/worldtrack/worldtrack/test/widget/app_smoke_test.dart
+00:00 +0: /home/runner/work/worldtrack/worldtrack/test/widget/app_smoke_test.dart: telefon düzeni: alt gezinme, boş durumlar
+00:01 +1: /home/runner/work/worldtrack/worldtrack/test/widget/app_smoke_test.dart: telefon düzeni: alt gezinme, boş durumlar
+00:03 +2: /home/runner/work/worldtrack/worldtrack/test/widget/app_smoke_test.dart: telefon düzeni: alt gezinme, boş durumlar
+00:04 +3: /home/runner/work/worldtrack/worldtrack/test/widget/app_smoke_test.dart: telefon düzeni: alt gezinme, boş durumlar
+00:05 +4: /home/runner/work/worldtrack/worldtrack/test/widget/app_smoke_test.dart: telefon düzeni: alt gezinme, boş durumlar
+00:06 +5: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Seyahat kayıtları oluştur, düzenle, sil
+00:07 +6: /home/runner/work/worldtrack/worldtrack/test/widget/app_smoke_test.dart: masaüstü düzeni: yan menü ve tüm bölümler
+00:08 +7: /home/runner/work/worldtrack/worldtrack/test/widget/app_smoke_test.dart: masaüstü düzeni: yan menü ve tüm bölümler
+00:10 +8: /home/runner/work/worldtrack/worldtrack/test/widget/app_smoke_test.dart: masaüstü düzeni: yan menü ve tüm bölümler
+00:11 +9: /home/runner/work/worldtrack/worldtrack/test/widget/app_smoke_test.dart: masaüstü düzeni: yan menü ve tüm bölümler
+00:11 +10: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: İstatistikler tekrar ziyaretler bir kez sayılır, elle işaretleme ülke sayısına eklenir
+00:12 +11: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: İstatistikler tekrar ziyaretler bir kez sayılır, elle işaretleme ülke sayısına eklenir
+00:12 +12: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: İstatistikler tekrar ziyaretler bir kez sayılır, elle işaretleme ülke sayısına eklenir
+00:12 +13: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: İstatistikler tekrar ziyaretler bir kez sayılır, elle işaretleme ülke sayısına eklenir
+00:12 +14: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: İstatistikler tekrar ziyaretler bir kez sayılır, elle işaretleme ülke sayısına eklenir
+00:12 +15: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: İstatistikler tekrar ziyaretler bir kez sayılır, elle işaretleme ülke sayısına eklenir
+00:13 +16: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:13 +17: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:13 +18: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:13 +19: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:13 +20: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:13 +21: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:13 +22: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:13 +23: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:13 +24: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:13 +25: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:13 +26: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar kayıt silinince fotoğraf dosyaları ve masraflar da silinir
+00:14 +27: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Fotoğraflar ve masraflar masraf toplamları para birimine göre ayrılır
+00:15 +28: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Planlar kaydet, durak sırasını değiştir, seyahate dönüştür
+00:16 +29: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Planlar gelecekteki plan dönüştürülemez; plan silinince kayıtlar kalır
+00:17 +30: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Planlar takvim aralığı sorguları
+00:19 +31: /home/runner/work/worldtrack/worldtrack/test/unit/database_test.dart: Elle eklenen şehir ekle, tekrar eklemede aynısını döndür, aramada bul
+00:20 +32: All tests passed!

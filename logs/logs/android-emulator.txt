@@ -1,0 +1,39 @@
+== Emülatör: sdk_gphone64_x86_64 / Android 14 (API 34)
+== APK kurulumu: out/WORLDTRACK-1.0.0-Android.apk
+Performing Streamed Install
+Success
+KURULUM: BAŞARILI
+== İzinler
+  android.permission.ACCESS_NETWORK_STATE
+  android.permission.ACCESS_NETWORK_STATE: granted=true
+  android.permission.INTERNET
+  android.permission.INTERNET: granted=true
+== Açılış
+Starting: Intent { cmp=com.furkanbaykal.worldtrack/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.furkanbaykal.worldtrack/.MainActivity
+TotalTime: 5378
+WaitTime: 5842
+Complete
+AÇILIŞ: BAŞARILI (süreç çalışıyor)
+== Geri tuşu (ana sayfadayken uygulamadan çıkılmalı, çökmemeli)
+== Zorla kapatıp yeniden açma
+Starting: Intent { cmp=com.furkanbaykal.worldtrack/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.furkanbaykal.worldtrack/.MainActivity
+TotalTime: 3062
+WaitTime: 3114
+Complete
+YENİDEN AÇILIŞ: BAŞARILI
+== Çökme kontrolü (logcat)
+ÇÖKME: YOK
+== Uçtan uca test (emülatörde, hata ayıklama derlemesi)
+E2E (Android): BAŞARILI
+WTSHOT|19_yeniden_baslatma|gUOffIIJ48dDIpEIkiUSiRC2YAFWxsUBAPznzGl3LsdhwzBzxgykbN0KkUgEB3t7bEtNFeKaHsFrnp6ws7XF6vh4rFq5EnV1ddCsWdMhGX379gUAfHv2LGxtbCCVSrE0IgLrtFrIZDK4uboiJzcXhUVFmB8c/JwseTZWVlZITknBpcuXsTA0FBcvXUJVVRVbkUZHRiI1LQ3DnZ1hb2+PTJ0O//zmG+R/9hlgvLJTq1RY8+67WB4VBWtra8D4Zg9Qq7E6Ph4pGzfC2toaG5KT27zibo+5KhV8lErs+OgjqP38cK6sDEkpKWZXrPZ2dig/fx7XKytbXZHLZTIEBQRgT0YG/hQbi8anT7E+IQHDXVyw6Vf0NFhnxKMpQvzaGxBqp5enJ2xtbBAdG4uD+/eze1aj3N3h5OiId9auxayZMyGVSrvJkvYRdMb+YVzFqP39McbDg20qPz8czc9nZbOfw87ODtnp6XBzdUXS5s24VlGBD7TadvtHR0Zizdtv44vCQiQmJWHihAlI3bYNYrFYsCxvYwltrkr1s8ttkUiEzUlJWBgaiszsbPzt8GGsb+MmZ0+lf79+yNy9Gw0NDXhDpYI2MRF/7uBDD/379cPa+HikbNnCHpgIDQnBO2+9BW1iImbPnYuGhgYs+YXf/fml/LZ/f+zLysKdO3egDgpCRlYW9uzaBVdj6W9BSAhily3DB8nJWLh4MRobG5GdkcESKgDMVipRX18PlZ+fmexErRZTJk3CH5YswdLlyzHN2xuj3N0F6+bu5oaPs7Px9+PHMUOpRP6xY4jX
+WTSHOT|19_yeniden_baslatma|aMz6REVGouTMGUzy8kJdXV0rGYlaLUa6umLZihVYuWoVPCdPxnvGh1x+LXRGPJoixK+9gY7YGTp/PkKCghARHc1W5SKRCPMCAvBtaWmr2O4p9Oo/YMsvKEB4RARydDp4GUsqHE7y5s0oKy9H5p493a0Kh/PC0Ov/gC0zOxvOTk6YPHFid6vC6SE8fvwYWTodFoSEdLcqHM4LR69NOOUXLqCwqAjhYWGwsBB0q4rzAlBYVATxSy/B2/jlXw6H03X06pIah8PhcHoGvb6kxuFwOJyeA084HA6Hw+kSeMLhcDgcTpfAEw6Hw+FwugSecDgcDofTJfCEw+FwOJwugSccDofD4XA4HA6H03v4D/2a65URCGMRAAAAAElFTkSuQmCC
+UÇTAN UCA TEST TAMAMLANDI: 8 kayıt kalıcı.
+02:14 +1: (tearDownAll)
+02:15 +1: All tests passed!
+== Ekran görüntüleri: 21

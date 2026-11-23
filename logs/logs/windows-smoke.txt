@@ -1,0 +1,13 @@
+
+== Kurulum dosyası: WORLDTRACK-1.0.0-Windows-Setup.exe (14.2 MB)
+Kurulum çıkış kodu: 0
+KURULUM: BAŞARILI (WORLDTRACK.exe mevcut)
+Başlat menüsü kısayolu: WORLDTRACK.lnk
+AÇILIŞ: BAŞARILI (süreç çalışıyor, bellek 142 MB)
+Veritabanı oluşturuldu: C:\Users\runneradmin\AppData\Roaming\Furkan Baykal\WORLDTRACK\worldtrack.db (4.4 MB)
+YENİDEN AÇILIŞ: BAŞARILI
+KALDIRMA: BAŞARILI (çıkış kodu 0)
+Kişisel veriler kaldırmadan sonra korunuyor (beklenen davranış).
+TAŞINABİLİR AÇILIŞ: BAŞARILI
+Taşınabilir veri klasörü exe yanında: BAŞARILI
+E2E (Windows): BAŞARILI

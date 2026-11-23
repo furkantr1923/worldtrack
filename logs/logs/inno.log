@@ -1,0 +1,348 @@
+Inno Setup 6 Command-Line Compiler
+Copyright (C) 1997-2026 Jordan Russell. All rights reserved.
+Portions Copyright (C) 2000-2026 Martijn Laan. All rights reserved.
+Portions Copyright (C) 2001-2004 Alex Yackimoff. All rights reserved.
+https://www.innosetup.com
+
+Compiler engine version: Inno Setup 6.7.1
+Non-commercial use only
+
+Preprocessing
+   Reading file: C:\Program Files (x86)\Inno Setup 6\ISPPBuiltins.iss
+Parsing [Setup] section, line 9
+Parsing [Setup] section, line 10
+Parsing [Setup] section, line 11
+Parsing [Setup] section, line 12
+Parsing [Setup] section, line 13
+Parsing [Setup] section, line 14
+Parsing [Setup] section, line 15
+Parsing [Setup] section, line 16
+Parsing [Setup] section, line 17
+Parsing [Setup] section, line 18
+Parsing [Setup] section, line 19
+Parsing [Setup] section, line 20
+Parsing [Setup] section, line 21
+Parsing [Setup] section, line 22
+Parsing [Setup] section, line 23
+Parsing [Setup] section, line 24
+Parsing [Setup] section, line 25
+Parsing [Setup] section, line 26
+Parsing [Setup] section, line 27
+Parsing [Setup] section, line 28
+Parsing [Setup] section, line 29
+Parsing [Setup] section, line 30
+Parsing [Setup] section, line 31
+Parsing [Setup] section, line 32
+Parsing [Setup] section, line 33
+Parsing [Setup] section, line 34
+Parsing [Setup] section, line 35
+Reading file (WizardImageFile)
+Reading file (WizardSmallImageFile)
+Preparing Setup program executable
+   Verification successful
+   Updating icons (Setup.e32)
+   Updating version info (Setup.e32)
+Determining language code pages
+Parsing [Languages] section, line 38
+   Reading file: C:\Program Files (x86)\Inno Setup 6\Languages\Turkish.isl
+   Messages in script file
+Reading default messages from Default.isl
+Parsing [Languages] section, line 38
+   Reading file: C:\Program Files (x86)\Inno Setup 6\Languages\Turkish.isl
+Parsing [LangOptions], [Messages], and [CustomMessages] sections
+   Messages in script file
+Reading [Code] section
+Parsing [Tasks] section, line 41
+Parsing [Icons] section, line 47
+Parsing [Icons] section, line 48
+Parsing [Run] section, line 51
+Parsing [Files] section, line 44
+Creating setup files
+   Verification successful
+   Updating icons (Setup.exe)
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\connectivity_plus_plugin.dll
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\file_selector_windows_plugin.dll
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\flutter_windows.dll
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\msvcp140.dll
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\sqlite3.dll
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\sqlite3_flutter_libs_plugin.dll
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\url_launcher_windows_plugin.dll
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\vcruntime140.dll
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\vcruntime140_1.dll
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\WORLDTRACK.exe
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\app.so
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\icudtl.dat
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\AssetManifest.bin
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\AssetManifest.json
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\FontManifest.json
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\NativeAssetsManifest.json
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\NOTICES.Z
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\branding\logo.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\data\cities.tsv.gz
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\data\countries.json
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\data\world_shapes.json
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ad.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ae.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\af.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ag.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ai.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\al.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\am.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ao.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\aq.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ar.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\as.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\at.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\au.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\aw.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ax.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\az.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ba.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bb.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bd.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\be.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bf.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bg.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bh.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bi.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bj.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bl.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bn.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bo.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bq.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\br.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bs.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bt.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bv.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bw.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\by.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\bz.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ca.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cc.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cd.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cf.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cg.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ch.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ci.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ck.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cl.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cn.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\co.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cu.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cv.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cw.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cx.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cy.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\cz.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\de.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\dj.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\dk.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\dm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\do.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\dz.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ec.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ee.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\eg.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\eh.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\er.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\es.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\et.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\fi.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\fj.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\fk.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\fm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\fo.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\fr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ga.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gb.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gd.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ge.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gf.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gg.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gh.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gi.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gl.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gn.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gp.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gq.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gs.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gt.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gu.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gw.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\gy.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\hk.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\hm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\hn.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\hr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ht.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\hu.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\id.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ie.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\il.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\im.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\in.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\io.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\iq.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ir.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\is.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\it.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\je.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\jm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\jo.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\jp.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ke.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\kg.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\kh.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ki.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\km.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\kn.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\kp.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\kr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\kw.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ky.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\kz.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\la.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\lb.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\lc.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\li.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\lk.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\lr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ls.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\lt.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\lu.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\lv.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ly.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ma.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mc.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\md.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\me.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mf.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mg.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mh.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mk.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ml.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mn.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mo.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mp.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mq.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ms.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mt.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mu.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mv.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mw.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mx.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\my.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\mz.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\na.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\nc.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ne.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\nf.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ng.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ni.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\nl.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\no.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\np.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\nr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\nu.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\nz.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\om.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pa.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pe.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pf.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pg.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ph.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pk.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pl.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pn.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ps.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pt.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\pw.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\py.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\qa.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\re.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ro.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\rs.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ru.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\rw.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sa.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sb.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sc.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sd.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\se.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sg.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sh.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\si.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sj.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sk.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sl.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sn.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\so.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ss.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\st.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sv.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sx.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sy.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\sz.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tc.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\td.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tf.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tg.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\th.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tj.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tk.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tl.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tn.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\to.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tr.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tt.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tv.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tw.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\tz.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ua.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ug.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\um.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\us.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\uy.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\uz.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\va.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\vc.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ve.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\vg.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\vi.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\vn.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\vu.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\wf.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ws.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\xc.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\xk.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\ye.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\yt.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\za.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\zm.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\flags\zw.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\fonts\Poppins-Bold.ttf
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\fonts\Poppins-Medium.ttf
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\fonts\Poppins-Regular.ttf
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\assets\fonts\Poppins-SemiBold.ttf
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\fonts\MaterialIcons-Regular.otf
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\packages\flutter_map\lib\assets\flutter_map_logo.png
+   Compressing: D:\a\worldtrack\worldtrack\installer\..\build\windows\x64\runner\Release\data\flutter_assets\shaders\ink_sparkle.frag
+   Compressing Setup program executable
+   Updating version info (Setup.exe)
+   Updating manifest (Setup.exe)
+
+
+Successful compile (9.265 sec). Resulting Setup program filename is:
+D:\a\worldtrack\worldtrack\out\WORLDTRACK-1.0.0-Windows-Setup.exe

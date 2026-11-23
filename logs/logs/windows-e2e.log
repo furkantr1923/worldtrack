@@ -1,0 +1,26 @@
+00:00 +0: loading D:/a/worldtrack/worldtrack/integration_test/app_test.dart
+Building Windows application...                                    49.9s
+√ Built build\windows\x64\runner\Debug\WORLDTRACK.exe
+00:00 +0: WORLDTRACK uçtan uca
+EKRAN GÖRÜNTÜSÜ: 01_ana_sayfa_bos.png
+EKRAN GÖRÜNTÜSÜ: 02_seyahat_formu.png
+EKRAN GÖRÜNTÜSÜ: 04_seyahat_detay.png
+EKRAN GÖRÜNTÜSÜ: 05_foto_goruntuleyici.png
+EKRAN GÖRÜNTÜSÜ: 03_seyahatlerim.png
+EKRAN GÖRÜNTÜSÜ: 06_ana_sayfa.png
+EKRAN GÖRÜNTÜSÜ: 07_harita.png
+EKRAN GÖRÜNTÜSÜ: 08_harita_ulke_secimi.png
+EKRAN GÖRÜNTÜSÜ: 09_ulke_detay.png
+EKRAN GÖRÜNTÜSÜ: 10_plan_duzenleyici.png
+EKRAN GÖRÜNTÜSÜ: 11_plan_rota.png
+EKRAN GÖRÜNTÜSÜ: 12_takvim.png
+EKRAN GÖRÜNTÜSÜ: 13_kesfet.png
+EKRAN GÖRÜNTÜSÜ: 14_arama.png
+EKRAN GÖRÜNTÜSÜ: 15_ayarlar.png
+EKRAN GÖRÜNTÜSÜ: 16_ana_sayfa_koyu.png
+EKRAN GÖRÜNTÜSÜ: 17_harita_koyu.png
+EKRAN GÖRÜNTÜSÜ: 18_cevrimdisi_kayit.png
+EKRAN GÖRÜNTÜSÜ: 19_yeniden_baslatma.png
+UÇTAN UCA TEST TAMAMLANDI: 8 kayıt kalıcı.
+01:41 +1: (tearDownAll)
+01:41 +1: All tests passed!

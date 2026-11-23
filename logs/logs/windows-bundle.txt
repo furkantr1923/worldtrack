@@ -1,0 +1,16 @@
+
+Name                             Length
+----                             ------
+data                             
+connectivity_plus_plugin.dll     99840
+file_selector_windows_plugin.dll 111616
+flutter_windows.dll              18803200
+msvcp140.dll                     652136
+sqlite3_flutter_libs_plugin.dll  9728
+sqlite3.dll                      1478656
+url_launcher_windows_plugin.dll  98304
+vcruntime140_1.dll               50544
+vcruntime140.dll                 176488
+WORLDTRACK.exe                   181248
+
+
