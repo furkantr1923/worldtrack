@@ -53,6 +53,7 @@ class _HomeView extends StatelessWidget {
           ),
           if (!wide) ...[
             IconButton(
+              key: const Key('homeDiscover'),
               tooltip: 'Keşfet',
               onPressed: () => shell.go(AppTab.discover),
               icon: const Icon(Icons.explore_outlined),

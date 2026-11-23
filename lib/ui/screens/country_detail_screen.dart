@@ -234,7 +234,7 @@ class _AboutCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final muted = theme.colorScheme.onSurfaceVariant;
-    Widget body;
+    Widget body = const SizedBox.shrink();
     switch (vm.infoState) {
       case InfoState.idle:
       case InfoState.loading:

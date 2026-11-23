@@ -1,0 +1,13 @@
+WORLDTRACK — Taşınabilir (kurulumsuz) Windows sürümü
+=====================================================
+
+Çalıştırmak için: WORLDTRACK.exe dosyasına çift tıklayın.
+
+* Kurulum gerekmez; klasörü USB belleğe veya istediğiniz yere taşıyabilirsiniz.
+* Bu klasördeki "portable.txt" dosyası durdukça tüm seyahat kayıtlarınız ve
+  fotoğraflarınız bu klasörün içindeki "WORLDTRACK-Veri" klasöründe saklanır.
+* Klasördeki diğer dosyaları (DLL'ler ve "data" klasörü) silmeyin; uygulama
+  bunlarla birlikte çalışır.
+* Gereksinim: Windows 10 veya 11 (64 bit).
+
+Developed by Furkan Baykal — github.com/furkantr1923/worldtrack

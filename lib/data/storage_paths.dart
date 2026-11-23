@@ -6,7 +6,7 @@ import 'package:path_provider/path_provider.dart';
 /// Uygulama verilerinin cihazdaki konumları.
 ///
 /// * Kurulu sürüm: işletim sisteminin uygulama destek klasörü
-///   (Windows'ta %APPDATA%\com.furkanbaykal\worldtrack, Android'de uygulamanın özel alanı).
+///   (Windows'ta %APPDATA%\Furkan Baykal\WORLDTRACK, Android'de uygulamanın özel alanı).
 /// * Taşınabilir (portable) Windows sürümü: exe'nin yanında `portable.txt` varsa
 ///   veriler exe'nin yanındaki `WORLDTRACK-Veri` klasöründe tutulur.
 class StoragePaths {
