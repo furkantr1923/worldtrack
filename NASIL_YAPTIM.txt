@@ -1,0 +1,169 @@
+WORLDTRACK — "Bu projeyi nasıl yaptın?" sorusuna cevap
+=========================================================
+Furkan Baykal · github.com/furkantr1923/worldtrack
+
+KISA CEVAP (30 saniyede anlatmak için)
+--------------------------------------
+WORLDTRACK; Windows ve Android'de çalışan, kişisel bir seyahat arşivi ve dünya haritası
+uygulaması. Tek bir Flutter kod tabanından iki platforma derleniyor. Veriler cihazdaki
+SQLite veritabanında duruyor, hesap ya da bulut yok. Harita için ülke sınırlarını
+(Natural Earth) uygulamanın içine gömdüm, bu yüzden harita internetsiz de çalışıyor.
+Derleme ve testleri GitHub Actions'ta otomatikleştirdim: her gönderimde Windows kurulum
+dosyası (Setup.exe), taşınabilir sürüm ve Android APK üretiliyor; kurulum, açılış ve
+uçtan uca testler hem Windows'ta hem Android emülatöründe çalışıyor.
+
+
+1) FİKİR VE KAPSAM
+------------------
+Hedef: Gittiğim ülke ve şehirleri haritada görmek, seyahatleri tarih/süre/fotoğrafla
+saklamak ve gelecek seyahatleri planlamak. Kapsamı bilinçli olarak sade tuttum:
+ * Sadece iki istatistik: ziyaret edilen ülke ve şehir sayısı.
+ * Ulaşım sadece 4 seçenek: uçak, araba, otobüs, tren.
+ * GPS takibi, bildirim, hesap, sosyal özellik YOK (gizlilik ve sadelik için).
+ * Arayüz yalnızca Türkçe.
+
+
+2) TEKNOLOJİ SEÇİMİ — NEDEN FLUTTER?
+------------------------------------
+İlk düşündüğüm .NET MAUI idi, ama MAUI'nin resmî harita kontrolü Windows'u desteklemiyor.
+Windows için ayrı bir WebView/JavaScript harita çözümü gerekecekti; bu da iki farklı harita
+kodu demekti. Flutter + flutter_map ise iki platformda da aynı Dart koduyla çalışıyor.
+Bu yüzden Flutter'ı seçtim.
+
+Kullandığım ana paketler:
+ * flutter_map + latlong2 ......... harita ve koordinatlar
+ * sqflite_common_ffi + sqlite3_flutter_libs ... SQLite (Windows ve Android'de aynı motor)
+ * provider ......................... MVVM için durum yönetimi
+ * image_picker + image ............. fotoğraf seçme ve küçük önizleme üretme
+ * connectivity_plus ................ çevrimiçi/çevrimdışı durumu
+ * http, url_launcher, intl ......... Vikipedi özeti, bağlantılar, Türkçe tarih biçimleri
+
+
+3) MİMARİ — MVVM
+----------------
+ * Model (data/): Ülke, Şehir, Seyahat kaydı, Fotoğraf, Plan, Durak, Masraf modelleri
+   ve tüm SQL sorgularının bulunduğu "repository" sınıfları.
+ * ViewModel (viewmodels/): Her ekranın veriyi yükleyen ve durumunu tutan sınıfı.
+ * View (ui/): Ekranlar ve ortak bileşenler.
+ * Bir kayıt değişince depo bir "veri değişti" olayı yayınlıyor; açık ekranlar kendini
+   otomatik yeniliyor. Örneğin seyahat eklenince harita rengi, istatistik ve takvim
+   ekstra kod yazmadan güncelleniyor.
+
+
+4) VERİ — HİÇBİR BİLGİYİ UYDURMADIM
+----------------------------------
+Ülke ve şehir bilgilerini elle girmedim, açık veri kaynaklarından bir Python betiğiyle
+(tool/prepare_data.py) ürettim:
+ * Natural Earth (kamu malı): ülke sınırları, Türkçe ülke adları, bölgeler.
+ * GeoNames (CC BY 4.0): başkent, nüfus, yüzölçümü, para birimi ve nüfusu 15.000'in
+   üzerindeki ≈32 bin şehir; Türkçe şehir adları (Münih, Viyana, Lizbon...).
+ * Bayraklar: Wikimedia Commons kaynaklı kamu malı SVG'ler; PNG'ye çevirdim.
+ * Ülke açıklaması: Türkçe Vikipedi'den çevrimiçi alınıp cihazda önbelleğe yazılıyor.
+Özel durumlar: KKTC ve Somaliland'in ISO kodu olmadığı için uygulama içi kod verdim;
+bu bölgelerdeki şehirleri hassas (1:10m) sınırlarla nokta-poligon testi yaparak atadım.
+Veri hazırlarken semt kayıtlarını (ör. "Paris 15. bölge") ayıkladım.
+
+
+5) HARİTA NASIL ÇALIŞIYOR?
+-------------------------
+ * Ülke poligonları uygulamanın içinde; internet olmasa da harita ve ülke seçimi çalışıyor.
+ * Haritaya dokunulan noktanın hangi ülkede olduğunu kendi yazdığım nokta-poligon
+   algoritmasıyla buluyorum (önce sınır kutusuyla eleme, sonra ray-casting). Vatikan
+   gibi bir ülkenin içindeki küçük ülkeler için en küçük eşleşme seçiliyor.
+ * Ziyaret edilen ülkeler yeşil, planlananlar turuncu, seçili ülke mercan rengi.
+ * Ülke adları Türkçe ve yakınlaştırma düzeyine göre gösteriliyor.
+ * İsteğe bağlı OpenStreetMap altlığı var. Geliştirme sırasında CARTO altlığının artık API
+   anahtarı istediğini test ekran görüntülerinde fark ettim ve kaldırdım; varsayılanı
+   uygulamanın kendi çizdiği stilize harita yaptım. Yani gizli ücretli servis yok.
+ * Rotalarda dürüst gösterim: uçuşlar "büyük daire yayı", diğerleri "basit bağlantı"
+   olarak etiketleniyor; gerçek yol gibi gösterilmiyor. İstenirse OSRM ile karayolu tahmini.
+
+
+6) VERİTABANI
+-------------
+SQLite, sürümlü şema (migration), yabancı anahtarlar ve kurallar:
+ * Seyahat silinince fotoğrafları ve masrafları da siliniyor (CASCADE + dosya silme).
+ * Tarihler saat dilimsiz "takvim günü" (yyyy-MM-dd) olarak saklanıyor.
+ * Para tutarları kayan nokta hatası olmasın diye kuruş cinsinden tamsayı.
+ * Plan → seyahat dönüşümü tek "transaction" içinde: ya hepsi kaydedilir ya hiçbiri.
+ * İstatistik kuralı: aynı şehre tekrar gitmek şehir sayısını artırmıyor.
+
+
+7) PERFORMANS
+-------------
+ * Ağır işleri (34 bin şehir verisini çözme, ülke poligonlarını yükleme, fotoğraf
+   küçültme) ayrı bir izolatta (arka plan iş parçacığı) yaptım; arayüz donmuyor.
+ * İlk açılışta şehirler tek işlemde toplu olarak veritabanına yazılıyor (birkaç saniye).
+ * Listeler "lazy" oluşturuluyor; fotoğraflar ekran boyutunda çözülüyor.
+
+
+8) TÜRKÇE ARAMA
+---------------
+Kendi "katlama" fonksiyonumu yazdım: İ/I kuralıyla küçük harf + ç→c, ğ→g, ı→i, ö→o,
+ş→s, ü→u + aksanları silme. Böylece "munih" yazınca Münih, "cekya" yazınca Çekya,
+"İSTANBUL" ya da "istanbul" yazınca İstanbul bulunuyor. Ülke listesi de Türk alfabesine
+göre (Ç, Ğ, İ, Ö, Ş, Ü doğru yerde) sıralanıyor.
+
+
+9) TEST
+-------
+ * 32 birim + widget testi: Türkçe arama, tarih hesapları, mesafe, veritabanı CRUD,
+   yeniden başlatma sonrası kalıcılık, istatistikte tekrar ziyaret, plan sıralama ve
+   seyahate dönüştürme, masraf toplamları, harita tıklama testi (Türkiye/Fransa/KKTC...).
+ * Uçtan uca test: Uygulamayı gerçekten açıp kullanıcı gibi dokunan bir test yazdım.
+   Seyahat ekleme, fotoğraf ekleme/silme, masraf, düzenleme, harita seçimi, plan oluşturma,
+   planı seyahate dönüştürme, takvim, koyu tema, çevrimdışı mod, silme ve uygulamayı
+   yeniden başlatıp verilerin kaldığını kontrol ediyor. Bu test hem Windows'ta hem Android
+   emülatöründe çalışıyor ve her adımda ekran görüntüsü alıyor.
+ * Testler gerçek hatalar yakaladı: alt "Kaydet" çubuğunun formu ekran dışına itmesi,
+   çip yazılarının görünmemesi, takvimin küçük pencerede taşması, elle eklenen şehrin
+   tekrar oluşması. Hepsini düzelttim.
+
+
+10) DERLEME VE TESLİM (CI/CD)
+-----------------------------
+GitHub Actions iş akışı her gönderimde:
+ 1. Kodu analiz edip birim testlerini çalıştırıyor.
+ 2. Windows release derlemesi alıyor, Visual C++ DLL'lerini ekliyor, Inno Setup ile
+    Türkçe kurulum sihirbazı (Setup.exe) ve taşınabilir zip üretiyor. Sonra Setup.exe'yi
+    sessizce kurup uygulamayı açıyor, kapatıp tekrar açıyor, kaldırıyor; taşınabilir
+    sürümü de açıp verinin exe'nin yanına yazıldığını doğruluyor.
+ 3. Android APK derliyor; Android 14 emülatöründe kurup açıyor, geri tuşunu ve yeniden
+    açılışı deniyor, çökme var mı diye logları tarıyor, uçtan uca testi çalıştırıyor.
+ 4. Tüm çıktıları, logları ve ekran görüntülerini 'builds' dalına koyuyor.
+
+
+11) GİZLİLİK
+------------
+Kişisel kayıtlar asla internete gönderilmiyor. İnternete giden tek şeyler: (isteğe bağlı)
+harita karoları, Vikipedi'ye ülke kimliği ve kullanıcı açıkça isterse iki durağın
+koordinatı (güzergâh tahmini). Konum izni yok; Android'de fotoğraflar sistem seçicisiyle
+alındığı için depolama izni de yok.
+
+
+12) KULLANDIĞIM ARAÇLAR VE SÜREÇ
+-------------------------------
+Gereksinimleri detaylı bir "master prompt" olarak yazdım ve geliştirmeyi yapay zekâ destekli
+(Claude) yürüttüm: mimari kararları, veri kaynaklarını, kapsamı ve kabul kriterlerini
+belirledim; kod, otomatik testler ve CI üzerinden doğrulandı. Hataları testlerin ekran
+görüntülerinden ve loglarından bularak düzelttik.
+
+
+13) BİLİNEN SINIRLAMALAR (dürüstçe)
+----------------------------------
+ * Setup.exe kod imzalı değil (sertifika ücretli) → Windows SmartScreen uyarı gösterebilir.
+ * APK hata ayıklama anahtarıyla imzalı (kendi yayın anahtarı eklenebilir, README'de anlatıldı).
+ * Şehir listesi 15.000+ nüfuslu yerleri kapsıyor; daha küçük yerler elle eklenebiliyor.
+ * Testler emülatörde ve GitHub'ın Windows sanal makinesinde yapıldı; fiziksel cihazda
+   elle deneme ayrıca yapılmalı.
+
+
+Sık sorulabilecek sorular
+-------------------------
+S: Neden bulut yok?           C: Gizlilik ve basitlik; hesap/sunucu maliyeti olmadan çalışsın diye.
+S: İnternetsiz çalışıyor mu?  C: Evet. Kayıtlar, fotoğraflar ve harita çalışır; sadece Vikipedi
+                                 özeti ve isteğe bağlı OSM altlığı bağlantı ister.
+S: Şehir verisi nereden?      C: GeoNames (CC BY 4.0), Türkçe adlarıyla birlikte.
+S: Kaç satır kod?             C: ≈9.600 satır uygulama (59 Dart dosyası) + ≈940 satır test + veri aracı ve CI.
+S: En zor kısım?              C: İki platformda aynı haritayı internetsiz çalıştırmak ve
+                                 Windows/Android kurulumunu otomatik test etmek.
