@@ -4,6 +4,7 @@
 // tüm temel akışlar denenir. Her önemli adımda ekran görüntüsü alınır
 // (geçici klasör / worldtrack_screens). Fotoğraf seçici, sistem penceresi
 // açılamayacağı için test görselleri üreten sahte bir kaynakla değiştirilir.
+import 'dart:convert';
 import 'dart:io';
 import 'dart:ui' as ui;
 
@@ -65,9 +66,18 @@ Future<void> shot(WidgetTester t, String name) async {
     final boundary = shotKey.currentContext!.findRenderObject()! as RenderRepaintBoundary;
     final image = await boundary.toImage(pixelRatio: 1.0);
     final data = await image.toByteData(format: ui.ImageByteFormat.png);
-    File('${screensDir.path}/$name.png').writeAsBytesSync(data!.buffer.asUint8List());
+    final bytes = data!.buffer.asUint8List();
+    File('${screensDir.path}/$name.png').writeAsBytesSync(bytes);
     // ignore: avoid_print
     print('EKRAN GÖRÜNTÜSÜ: $name.png');
+    if (Platform.isAndroid) {
+      // Test bitince uygulama kaldırıldığı için görüntüler loga da yazılır (CI ayıklar).
+      final b64 = base64Encode(bytes);
+      for (var i = 0; i < b64.length; i += 800) {
+        // ignore: avoid_print
+        print('WTSHOT|$name|${b64.substring(i, i + 800 > b64.length ? b64.length : i + 800)}');
+      }
+    }
   });
 }
 
@@ -247,7 +257,7 @@ void main() {
     // ------------------------------------------------ 3. İstatistik (tekrar ziyaret tek sayılır)
     final st = await t.runAsync(() => s!.travels.stats());
     expect(st!.visitedCountries, 6);
-    expect(st!.visitedCities, 6); // Roma iki kez ziyaret edildi, bir kez sayılır
+    expect(st.visitedCities, 6); // Roma iki kez ziyaret edildi, bir kez sayılır
     await goTab(t, 'home');
     await idle(t, 1500);
     expect(find.descendant(of: find.byKey(const Key('statCountries')), matching: find.text('6')), findsOneWidget);
@@ -311,8 +321,8 @@ void main() {
     // Geçmiş tarihli plan → seyahate dönüştür (UI)
     final pastPlanId = await t.runAsync(() async {
       final vienna = (await s!.cities.search('viyana', countryCode: 'AT')).first;
-      final prague = (await s!.cities.search('prag', countryCode: 'CZ')).first;
-      return s!.plans.save(PlannedTrip(
+      final prague = (await s.cities.search('prag', countryCode: 'CZ')).first;
+      return s.plans.save(PlannedTrip(
         title: 'Orta Avrupa',
         startDate: Dates.today().subtract(const Duration(days: 40)),
         stops: [
@@ -380,7 +390,7 @@ void main() {
     await idle(t, 800);
     await shot(t, '18_cevrimdisi_kayit');
     await t.pageBack();
-    s!.connectivity.setOnline(true);
+    s.connectivity.setOnline(true);
     await idle(t, 600);
 
     // ------------------------------------------------ 9. Silme
@@ -403,7 +413,7 @@ void main() {
     Future<List<TravelPhoto>> allPhotos() async {
       final out = <TravelPhoto>[];
       for (final r in await s!.travels.list()) {
-        out.addAll(await s!.travels.photos(r.id!));
+        out.addAll(await s.travels.photos(r.id!));
       }
       return out;
     }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../core/utils/dates.dart';
-import '../data/models/models.dart';
 import 'base_view_model.dart';
 
 /// Takvimde gösterilen olay: tamamlanmış bir seyahat veya bir plan.

@@ -54,9 +54,21 @@ else
   log "E2E (Android): BAŞARISIZ — ayrıntı logs/android-e2e.log"
 fi
 tail -5 logs/android-e2e.log | tee -a "$R"
-adb exec-out run-as $PKG tar -c -C cache worldtrack_screens > /tmp/screens.tar 2>/dev/null || true
-if [ -s /tmp/screens.tar ]; then
-  mkdir -p /tmp/scr && tar -xf /tmp/screens.tar -C /tmp/scr && cp /tmp/scr/worldtrack_screens/*.png out/screens-android/ 2>/dev/null || true
-fi
+# Ekran görüntüleri test logundan ayıklanır (WTSHOT|ad|base64 parçası)
+python3 - <<'PY'
+import base64, collections
+parts = collections.OrderedDict()
+for line in open('logs/android-e2e.log', encoding='utf-8', errors='ignore'):
+    i = line.find('WTSHOT|')
+    if i < 0:
+        continue
+    _, name, chunk = line[i:].strip().split('|', 2)
+    parts.setdefault(name, []).append(chunk)
+for name, chunks in parts.items():
+    with open(f'out/screens-android/{name}.png', 'wb') as f:
+        f.write(base64.b64decode(''.join(chunks)))
+print('ayıklanan ekran görüntüsü:', len(parts))
+PY
+grep -v 'WTSHOT|' logs/android-e2e.log > logs/android-e2e.clean.log && mv logs/android-e2e.clean.log logs/android-e2e.log
 log "== Ekran görüntüleri: $(ls out/screens-android | wc -l)"
 exit 0

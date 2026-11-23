@@ -19,6 +19,8 @@ class ContentWidth extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Align(
         alignment: Alignment.topCenter,
+        // heightFactor: 1 → yükseklik içeriğe göre; alt çubuklarda tüm ekranı kaplamaz.
+        heightFactor: 1,
         child: ConstrainedBox(constraints: BoxConstraints(maxWidth: maxWidth), child: child),
       );
 }
@@ -191,8 +193,8 @@ class StatTile extends StatelessWidget {
                   ),
                 ),
                 Text(label,
-                    style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-                    maxLines: 1,
+                    style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant, height: 1.25),
+                    maxLines: 2,
                     overflow: TextOverflow.ellipsis),
               ],
             ),

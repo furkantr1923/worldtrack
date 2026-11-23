@@ -5,7 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../app_services.dart';
 import '../../core/utils/dates.dart';
-import '../../data/models/models.dart';
 import '../../viewmodels/country_detail_view_model.dart';
 import '../navigation.dart';
 import '../widgets/common.dart';

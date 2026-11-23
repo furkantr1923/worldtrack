@@ -40,7 +40,8 @@ void main() {
     test('Türkçe karakter duyarsız ülke ve şehir araması', () async {
       expect(s.countries.search('turkiye').first.code, 'TR');
       expect(s.countries.search('ALMANYA').first.code, 'DE');
-      expect(s.countries.search('cek').first.code, 'CZ');
+      expect(s.countries.search('cekya').first.code, 'CZ');
+      expect(s.countries.search('tayvan').first.code, 'TW');
       expect((await s.cities.search('munih')).first.nameTr, 'Münih');
       expect((await s.cities.search('istanbul')).first.countryCode, 'TR');
       expect((await s.cities.search('İSTANBUL')).first.nameTr, 'İstanbul');
@@ -57,8 +58,8 @@ void main() {
     });
 
     test('şema sürümü', () async {
-      final v = await s.database.db.getVersion();
-      expect(v, Migrations.latestVersion);
+      final v = await s.database.db.rawQuery('PRAGMA user_version');
+      expect(v.first.values.first, Migrations.latestVersion);
     });
   });
 

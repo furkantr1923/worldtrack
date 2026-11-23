@@ -37,6 +37,7 @@ jobs:
           set -o pipefail
           flutter analyze --no-fatal-infos --no-fatal-warnings 2>&1 | tee logs/analyze.log
       - name: Birim ve widget testleri
+        if: always()
         run: |
           set -o pipefail
           flutter test -r expanded 2>&1 | tee logs/unit-tests.log
@@ -48,7 +49,8 @@ jobs:
 
   windows:
     name: Windows (Setup.exe + taşınabilir + E2E)
-    runs-on: windows-latest
+    # Flutter 3.29 Visual Studio 2022 ile derler; bu imajda VS 2022 kurulu gelir.
+    runs-on: windows-2022
     timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
