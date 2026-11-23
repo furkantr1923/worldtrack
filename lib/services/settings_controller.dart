@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import '../data/repositories/settings_repository.dart';
 import 'routing_service.dart';
 
-/// Harita altlığı sağlayıcıları. Hiçbiri API anahtarı gerektirmez; ülke sınırları
-/// her durumda uygulamanın içinden çizildiği için "Kapalı" seçeneği tamamen çevrimdışıdır.
+/// Harita altlığı seçenekleri. Varsayılan "stilize" haritadır: ülke sınırları
+/// uygulamanın içinden çizilir, internet ve API anahtarı gerekmez.
+/// (CARTO karoları 2026 itibarıyla API anahtarı istediği için seçenekten çıkarıldı.)
 enum BasemapProvider {
-  carto('CARTO (sade, temaya uyumlu)'),
-  osm('OpenStreetMap Standart'),
-  none('Kapalı — yalnızca ülke sınırları'),
+  none('Stilize harita (çevrimdışı, önerilen)'),
+  osm('OpenStreetMap Standart (çevrimiçi)'),
   custom('Özel karo adresi');
 
   const BasemapProvider(this.label);
   final String label;
 
   static BasemapProvider parse(String? v) =>
-      values.firstWhere((e) => e.name == v, orElse: () => BasemapProvider.carto);
+      values.firstWhere((e) => e.name == v, orElse: () => BasemapProvider.none);
 }
 
 class BasemapConfig {
@@ -97,14 +97,6 @@ class SettingsController extends ChangeNotifier {
   /// Seçili altlığın karo yapılandırması; kapalıysa null.
   BasemapConfig? basemapFor(Brightness brightness) {
     switch (basemap) {
-      case BasemapProvider.carto:
-        final style = brightness == Brightness.dark ? 'dark_nolabels' : 'light_nolabels';
-        return BasemapConfig(
-          urlTemplate: 'https://{s}.basemaps.cartocdn.com/$style/{z}/{x}/{y}{r}.png',
-          subdomains: const ['a', 'b', 'c', 'd'],
-          attribution: '© OpenStreetMap katkıda bulunanlar · © CARTO',
-          maxNativeZoom: 19,
-        );
       case BasemapProvider.osm:
         return const BasemapConfig(
           urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',

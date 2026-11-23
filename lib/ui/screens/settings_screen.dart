@@ -196,9 +196,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
                         child: Text(
-                          'Ülke sınırları uygulamanın içindedir ve internetsiz çalışır. Altlık harita ise '
-                          'seçtiğin servisten çevrimiçi yüklenir; servis yalnızca görüntülediğin harita '
-                          'bölgesinin karolarını görür, kişisel kayıtlarını görmez.',
+                          'Ülke sınırları uygulamanın içindedir ve internetsiz çalışır. Çevrimiçi bir altlık '
+                          'seçersen karolar o servisten yüklenir; servis yalnızca görüntülediğin harita '
+                          'bölgesini görür, kişisel kayıtlarını görmez.',
                           style: theme.textTheme.bodySmall?.copyWith(color: muted),
                         ),
                       ),
@@ -321,9 +321,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   String _basemapNote(BasemapProvider p, SettingsController s) => switch (p) {
-        BasemapProvider.carto => 'Anahtarsız. Kişisel ve ticari olmayan kullanım için uygundur.',
-        BasemapProvider.osm => 'Anahtarsız. OSM karo kullanım politikası ağır kullanımı sınırlar.',
-        BasemapProvider.none => 'Tamamen çevrimdışı; yalnızca ülke sınırları çizilir.',
+        BasemapProvider.none => 'İnternet ve anahtar gerekmez; ülke sınırları ve Türkçe adlar uygulamanın içinden çizilir.',
+        BasemapProvider.osm => 'Anahtarsız; yol ve şehir ayrıntısı ekler. OSM karo politikası yoğun kullanımı sınırlar.',
         BasemapProvider.custom => s.customTileUrl.isEmpty ? 'Henüz adres girilmedi.' : s.customTileUrl,
       };
 }

@@ -92,7 +92,7 @@ class _CalendarView extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(flex: 3, child: grid),
+                        Expanded(flex: 3, child: SingleChildScrollView(child: grid)),
                         const SizedBox(width: 24),
                         SizedBox(width: 340, child: list),
                       ],

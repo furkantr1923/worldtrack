@@ -19,8 +19,7 @@ Ulusal bayraklar kamu malıdır. KKTC bayrağı resmî tarifine göre çizilmiş
 Ülke özetleri Türkçe Vikipedi'den alınır ve CC BY-SA 4.0 lisanslıdır.
 Her özetin altında kaynak sayfa bağlantısı gösterilir.''');
     yield const LicenseEntryWithLineBreaks(['Harita altlığı'], '''
-© OpenStreetMap katkıda bulunanlar (ODbL) — openstreetmap.org/copyright
-CARTO Basemaps © CARTO — carto.com/attributions''');
+İsteğe bağlı OpenStreetMap altlığı: © OpenStreetMap katkıda bulunanlar (ODbL) — openstreetmap.org/copyright''');
     yield const LicenseEntryWithLineBreaks(['Poppins yazı tipi'], '''
 Copyright 2020 The Poppins Project Authors (github.com/itfoundry/Poppins)
 SIL Open Font License, Version 1.1.''');

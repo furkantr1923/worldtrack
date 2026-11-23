@@ -68,7 +68,7 @@ lib/
   içinde kalabildiği için (Vatikan/İtalya) en küçük sınır kutulu eşleşme seçilir.
 * **Etiketler**: Türkçe ülke adları, Natural Earth `MIN_LABEL` değerine göre yakınlaştırma
   düzeyiyle ve yalnızca görünür alandakiler çizilir.
-* **Altlık**: İsteğe bağlı raster karolar (CARTO / OSM / özel adres / kapalı). Bkz. `MAP_PROVIDERS.md`.
+* **Altlık**: Varsayılan stilize (çevrimdışı); isteğe bağlı OSM veya özel karo adresi. Bkz. `MAP_AND_DATA_SOURCES.md`.
 
 ### Performans önlemleri
 

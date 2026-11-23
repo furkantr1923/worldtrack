@@ -6,18 +6,21 @@
 
 ## Harita altlığı (Ayarlar → Harita)
 
-Ülke sınırları uygulamanın içindedir; altlık yalnızca görsel arka plandır.
+Ülke sınırları ve Türkçe ülke adları uygulamanın içinden çizilir; altlık yalnızca isteğe bağlı
+görsel ayrıntıdır.
 
 | Seçenek | Adres | Anahtar | Not |
 |---|---|---|---|
-| **CARTO** (varsayılan) | `basemaps.cartocdn.com/{light,dark}_nolabels` | Gerekmez | Sade, etiketsiz; uygulamanın Türkçe etiketleriyle çakışmaz. CARTO'nun ücretsiz basemap koşulları kişisel/ticari olmayan kullanım içindir; ticari dağıtımda CARTO lisansı gerekir. |
-| OpenStreetMap Standart | `tile.openstreetmap.org` | Gerekmez | OSMF karo kullanım politikası yoğun kullanımı yasaklar; uygulama tanımlayıcı `User-Agent` gönderir. |
-| Kapalı | — | — | Tamamen çevrimdışı; yalnızca ülke sınırları çizilir. |
-| Özel adres | `https://…/{z}/{x}/{y}.png` | Sağlayıcıya göre | Anahtar gerekiyorsa kullanıcı adrese kendisi ekler. Anahtar yalnızca cihazdaki ayarlarda saklanır, **kaynak koda yazılmaz**. |
+| **Stilize harita** (varsayılan) | — | Gerekmez | Tamamen çevrimdışı. Okyanus + ülke poligonları + Türkçe etiketler. |
+| OpenStreetMap Standart | `tile.openstreetmap.org` | Gerekmez | Yol/şehir ayrıntısı ekler. OSMF karo kullanım politikası yoğun kullanımı yasaklar; uygulama tanımlayıcı `User-Agent` ve atıf gösterir. Kişisel kullanım içindir. |
+| Özel adres | `https://…/{z}/{x}/{y}.png` | Sağlayıcıya göre | Ticari/yoğun kullanım için lisanslı bir sağlayıcı (MapTiler, Stadia, kendi sunucunuz…) girilebilir. Anahtar gerekiyorsa kullanıcı adrese kendisi ekler; yalnızca cihazdaki ayarlarda saklanır, **kaynak koda yazılmaz**. |
 
-Karo sağlayıcısı yalnızca görüntülenen harita bölgesinin karo isteklerini görür.
-Karolar alınamazsa (çevrimdışı, kota, servis kesintisi) harita boş altlıkla çalışmaya
-devam eder ve üstte açıklayıcı bir uyarı gösterilir.
+> Geliştirme sırasında CARTO basemap karoları denendi; 2026 itibarıyla anahtarsız isteklerde
+> "API KEY REQUIRED" filigranı döndürdüğü CI ekran görüntülerinde görüldü. Gizli ücretli servis
+> bağımlılığı olmaması için CARTO seçenekten çıkarıldı ve varsayılan stilize harita yapıldı.
+
+Çevrimiçi altlık seçiliyken karolar alınamazsa (çevrimdışı, kota, servis kesintisi) harita
+stilize görünümle çalışmaya devam eder ve üstte açıklayıcı bir uyarı gösterilir.
 
 ## Gömülü veriler (uygulamanın içinde)
 

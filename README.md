@@ -63,9 +63,9 @@ Kurulum adımları: [docs/BUILD_AND_INSTALL.md](docs/BUILD_AND_INSTALL.md)
 
 ## API anahtarı gerekiyor mu?
 
-**Hayır.** Hiçbir özellik hesap, ücretli servis veya API anahtarı gerektirmez. Altlık harita
-anahtarsız CARTO/OSM karolarıyla gelir (ayarlardan kapatılabilir veya kendi karo adresinizi
-girebilirsiniz). Ayrıntılar ve servis sınırları: [docs/MAP_AND_DATA_SOURCES.md](docs/MAP_AND_DATA_SOURCES.md)
+**Hayır.** Hiçbir özellik hesap, ücretli servis veya API anahtarı gerektirmez. Dünya haritası
+uygulamanın içinden çizilir (internetsiz çalışır); istenirse ayarlardan anahtarsız OpenStreetMap
+altlığı veya kendi karo adresiniz açılabilir. Ayrıntılar ve servis sınırları: [docs/MAP_AND_DATA_SOURCES.md](docs/MAP_AND_DATA_SOURCES.md)
 
 ## Gizlilik
 
@@ -115,7 +115,7 @@ tool/            veri hazırlama, ikon üretimi, CI betikleri
 Ülke ve şehir verisi © [GeoNames](https://www.geonames.org) (CC BY 4.0) ·
 Bayraklar: [country-flags](https://github.com/hampusborgos/country-flags) (kamu malı) ·
 Ülke özetleri: Türkçe Vikipedi (CC BY-SA 4.0) ·
-Harita altlığı © OpenStreetMap katkıda bulunanlar, © CARTO ·
+İsteğe bağlı altlık © OpenStreetMap katkıda bulunanlar ·
 Yazı tipi: Poppins (SIL OFL 1.1)
 
 Uygulama kodu [MIT Lisansı](LICENSE) ile yayımlanmıştır.

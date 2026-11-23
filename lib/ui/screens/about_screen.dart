@@ -62,7 +62,7 @@ class AboutScreen extends StatelessWidget {
                       const _Source('Ülke ve şehir verisi', 'GeoNames — CC BY 4.0'),
                       const _Source('Bayraklar', 'country-flags (Wikimedia Commons) — kamu malı'),
                       const _Source('Ülke özetleri', 'Türkçe Vikipedi — CC BY-SA 4.0 (çevrimiçi)'),
-                      const _Source('Harita altlığı', '© OpenStreetMap katkıda bulunanlar, © CARTO'),
+                      const _Source('İsteğe bağlı altlık', '© OpenStreetMap katkıda bulunanlar (ODbL)'),
                       const _Source('Yazı tipi', 'Poppins — SIL Open Font License 1.1'),
                     ],
                   ),

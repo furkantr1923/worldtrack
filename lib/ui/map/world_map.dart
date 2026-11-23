@@ -90,7 +90,7 @@ class _WorldMapState extends State<WorldMap> {
     final key = '${b.name}|$tilesOn|${widget.selected}|${(widget.visited.toList()..sort()).join(',')}|'
         '${(widget.planned.toList()..sort()).join(',')}';
     if (_polygons != null && key == _polygonKey) return _polygons!;
-    final land = WtColors.land(b).withValues(alpha: tilesOn ? 0.55 : 1);
+    final land = WtColors.land(b).withValues(alpha: tilesOn ? 0.45 : 1);
     final border = WtColors.border(b);
     final normal = <Polygon<Object>>[];
     final selected = <Polygon<Object>>[];
