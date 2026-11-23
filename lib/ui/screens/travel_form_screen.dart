@@ -262,13 +262,16 @@ class _TravelFormScreenState extends State<TravelFormScreen> {
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
           child: ContentWidth(
             maxWidth: 680,
-            child: FilledButton.icon(
+            child: SizedBox(
+              width: double.infinity,
+              child: FilledButton.icon(
               key: const Key('saveTravel'),
               onPressed: _saving ? null : _save,
               icon: _saving
                   ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
                   : const Icon(Icons.check_rounded),
               label: Text(_saving ? 'Kaydediliyor…' : 'Kaydet'),
+            ),
             ),
           ),
         ),

@@ -78,7 +78,13 @@ class AppTheme {
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
-        titleTextStyle: text.titleLarge?.copyWith(color: scheme.onSurface),
+        // Not: ThemeData.textTheme boyutları sonradan eklendiği için burada açıkça verilir.
+        titleTextStyle: TextStyle(
+          fontFamily: font,
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
+          color: scheme.onSurface,
+        ),
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
@@ -143,7 +149,11 @@ class AppTheme {
       dividerTheme: DividerThemeData(color: scheme.outlineVariant.withValues(alpha: 0.6), space: 1),
       chipTheme: base.chipTheme.copyWith(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        labelStyle: const TextStyle(fontFamily: font, fontWeight: FontWeight.w500),
+        labelStyle: TextStyle(fontFamily: font, fontWeight: FontWeight.w500, fontSize: 14, color: scheme.onSurface),
+        secondaryLabelStyle:
+            TextStyle(fontFamily: font, fontWeight: FontWeight.w600, fontSize: 14, color: scheme.onSecondaryContainer),
+        selectedColor: scheme.primary.withValues(alpha: 0.16),
+        checkmarkColor: scheme.primary,
       ),
       pageTransitionsTheme: const PageTransitionsTheme(builders: {
         TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),

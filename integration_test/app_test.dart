@@ -115,6 +115,15 @@ Future<void> tapKey(WidgetTester t, String key) async {
   await t.pump(const Duration(milliseconds: 200));
 }
 
+/// Uygulama Türkçe olduğu için (geri ipucu "Geri") tester.pageBack() yerine
+/// ekrandaki geri düğmesine dokunulur.
+Future<void> goBack(WidgetTester t) async {
+  final back = find.byType(BackButton);
+  await waitFor(t, back);
+  await t.tap(back.last);
+  await idle(t, 700);
+}
+
 Finder keyPrefix(String prefix) => find.byWidgetPredicate(
     (w) => w.key is ValueKey<String> && (w.key! as ValueKey<String>).value.startsWith(prefix));
 
@@ -209,7 +218,7 @@ void main() {
     await waitFor(t, find.text('1 / 2'));
     await idle(t, 600);
     await shot(t, '05_foto_goruntuleyici');
-    await t.pageBack();
+    await goBack(t);
     await idle(t, 600);
     await tapKey(t, 'removePhoto_1');
     await waitFor(t, find.text('Kaldır'));
@@ -230,7 +239,7 @@ void main() {
     await tapKey(t, 'saveTravel');
     await waitFor(t, find.byKey(const Key('editTravel')));
     await waitFor(t, find.text('2 gün'));
-    await t.pageBack();
+    await goBack(t);
     await idle(t, 600);
 
     // Gerçekçi bir arşiv için birkaç kayıt daha (veritabanı üzerinden) + tekrar ziyaret
@@ -286,7 +295,7 @@ void main() {
     await waitFor(t, find.byKey(const Key('countryTitle')));
     await idle(t, 5000); // Vikipedi özeti (çevrimiçi ise)
     await shot(t, '09_ulke_detay');
-    await t.pageBack();
+    await goBack(t);
     await idle(t, 600);
 
     // ------------------------------------------------ 5. Plan oluştur (UI)
@@ -315,7 +324,7 @@ void main() {
     await waitFor(t, find.byKey(const Key('convertPlan')));
     await idle(t, 3000);
     await shot(t, '11_plan_rota');
-    await t.pageBack();
+    await goBack(t);
     await idle(t, 600);
 
     // Geçmiş tarihli plan → seyahate dönüştür (UI)
@@ -338,7 +347,7 @@ void main() {
     await waitFor(t, find.text('Tamamlandı'));
     final afterConvert = await t.runAsync(() => s!.travels.list());
     expect(afterConvert!.where((r) => r.planId == pastPlanId), hasLength(2));
-    await t.pageBack();
+    await goBack(t);
     await idle(t, 600);
 
     // ------------------------------------------------ 6. Takvim
@@ -363,7 +372,7 @@ void main() {
     await t.enterText(find.byKey(const Key('globalSearchField')), 'munih');
     await waitFor(t, find.text('Münih'));
     await shot(t, '14_arama');
-    await t.pageBack();
+    await goBack(t);
     await idle(t, 400);
     await goTab(t, 'settings');
     await idle(t, 600);
@@ -389,7 +398,7 @@ void main() {
     await waitFor(t, find.byKey(const Key('editTravel')));
     await idle(t, 800);
     await shot(t, '18_cevrimdisi_kayit');
-    await t.pageBack();
+    await goBack(t);
     s.connectivity.setOnline(true);
     await idle(t, 600);
 

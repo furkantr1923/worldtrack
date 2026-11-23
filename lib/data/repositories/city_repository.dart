@@ -79,11 +79,16 @@ class CityRepository {
     if ((lat == null) != (lon == null)) throw ArgumentError('Enlem ve boylam birlikte girilmeli');
     if (lat != null && (lat < -90 || lat > 90)) throw ArgumentError('Enlem -90 ile 90 arasında olmalı');
     if (lon != null && (lon < -180 || lon > 180)) throw ArgumentError('Boylam -180 ile 180 arasında olmalı');
-    final existing = await _db.rawQuery(
-      'SELECT $_columns FROM cities WHERE country_code = ? AND search_key = ? AND is_custom = 1',
-      [countryCode, TurkishText.fold(trimmed)],
+    // Aynı adla daha önce elle eklenmişse (büyük/küçük harf ve Türkçe karakter farkı
+    // gözetmeksizin) yeni kayıt açılmaz, mevcut olan döndürülür.
+    final folded = TurkishText.fold(trimmed);
+    final customs = await _db.rawQuery(
+      'SELECT $_columns FROM cities WHERE country_code = ? AND is_custom = 1',
+      [countryCode],
     );
-    if (existing.isNotEmpty) return City.fromRow(existing.first);
+    for (final row in customs) {
+      if (TurkishText.fold(row['name_tr'] as String) == folded) return City.fromRow(row);
+    }
 
     final maxRow = await _db.rawQuery('SELECT MAX(id) AS m FROM cities WHERE id >= ?', [customIdBase]);
     final id = ((maxRow.first['m'] as int?) ?? (customIdBase - 1)) + 1;

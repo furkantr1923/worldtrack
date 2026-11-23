@@ -267,11 +267,14 @@ class _PlanEditorScreenState extends State<PlanEditorScreen> {
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
           child: ContentWidth(
             maxWidth: 760,
-            child: FilledButton.icon(
+            child: SizedBox(
+              width: double.infinity,
+              child: FilledButton.icon(
               key: const Key('savePlan'),
               onPressed: _saving ? null : _save,
               icon: const Icon(Icons.check_rounded),
               label: Text(_saving ? 'Kaydediliyor…' : 'Planı kaydet'),
+            ),
             ),
           ),
         ),

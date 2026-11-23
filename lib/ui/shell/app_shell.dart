@@ -227,13 +227,17 @@ class _RailItem extends StatelessWidget {
               children: [
                 Icon(selected ? tab.selectedIcon : tab.icon, color: color, size: 22),
                 const SizedBox(width: 14),
-                Text(
-                  tab.label,
-                  style: TextStyle(
-                    fontFamily: AppTheme.font,
-                    fontSize: 14.5,
-                    fontWeight: selected ? FontWeight.w600 : FontWeight.w500,
-                    color: selected ? scheme.primary : scheme.onSurface,
+                Expanded(
+                  child: Text(
+                    tab.label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: AppTheme.font,
+                      fontSize: 14.5,
+                      fontWeight: selected ? FontWeight.w600 : FontWeight.w500,
+                      color: selected ? scheme.primary : scheme.onSurface,
+                    ),
                   ),
                 ),
               ],
