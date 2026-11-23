@@ -1,0 +1,48 @@
+name: Bootstrap (platform iskeleti + veri)
+
+# Yalnızca elle veya 'bootstrap-request' dalına push ile çalışır.
+# Flutter'ın ürettiği android/ ve windows/ iskeletini ve açık kaynaklardan
+# üretilen coğrafi verileri 'bootstrap' dalına koyar; bunlar incelenip ana dala eklenir.
+on:
+  workflow_dispatch:
+  push:
+    branches: [bootstrap-request]
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.29.3'
+          channel: stable
+          cache: true
+      - name: Platform iskeleti
+        run: |
+          mkdir -p out
+          flutter --version > out/flutter-version.txt
+          flutter create --org com.furkanbaykal --project-name worldtrack \
+            --platforms android,windows --description "WORLDTRACK" /tmp/skel
+          cp -r /tmp/skel/android /tmp/skel/windows out/
+      - name: Bağımlılık çözümü
+        run: |
+          flutter pub get 2>&1 | tee out/pub-get.log
+          cp pubspec.lock out/ || true
+          flutter pub deps --style=compact > out/pub-deps.txt 2>&1 || true
+      - name: Coğrafi veri (Natural Earth + GeoNames)
+        run: |
+          python3 tool/prepare_data.py --out out/data --cache /tmp/gncache 2>&1 | tee out/prepare-data.log
+          ls -la out/data
+      - name: bootstrap dalına gönder
+        if: always()
+        run: |
+          cd out
+          git init -q -b bootstrap
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "bootstrap ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" bootstrap
